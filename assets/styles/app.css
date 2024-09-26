@@ -41,13 +41,14 @@ header h2 {
     text-align: center;
     font-size: 1.3rem;
     margin: 0;
-    padding: 0;
+    padding-bottom: 0.8rem;
 }
 header div {
     width :18rem;
     color: white;
-    padding: 0.5rem auto;
-    height: auto;
+    padding-top: 1.8rem;
+    height: 19rem;
+    border-radius: 4px;
     background-color: var(--secondary-color);
 }
 header div p {
