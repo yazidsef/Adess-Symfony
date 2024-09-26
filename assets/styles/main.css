@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+:root{
+    --priumary-color: #007Aff;
+    --secondary-color: #FA9B43;
+
+    /* Font families */
+    --first-font: 'Source Code Pro';
+
+}
+body{
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    font-family: var(--first-font);
+}
+a{
+    text-decoration: none;
+    color: var(--second-primary-color);
+    
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}

@@ -1,3 +1,30 @@
-body {
-    background-color: skyblue;
+
+ul{
+    list-style: none;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+nav img{
+    width: 200px;
+    height: auto;
+}
+nav ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+nav ul li {
+    margin: auto 10px;
+    border-bottom: 1px solid gray;
+}
+header img{
+    width: 100%;
+    height: auto;
+    margin-top: 0.3rem;
+}
+header div {
+    width : 10rem;
+    border: 1px solid gray;
 }
