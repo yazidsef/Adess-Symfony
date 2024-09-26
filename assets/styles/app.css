@@ -56,3 +56,14 @@ header div p {
     margin: 0 auto;
     text-align: justify;
 }
+form {
+    border: 1px solid gray;
+    display: grid;
+    width: 50%;
+    margin: 10rem auto;
+    padding: 5rem;
+}
+form input {
+    padding: 0.5rem;
+
+}

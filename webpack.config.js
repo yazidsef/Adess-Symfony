@@ -47,6 +47,20 @@ Encore
     //     config.plugins.push('@babel/a-babel-plugin');
     // })
 
+    .setPublicPath('/build')
+    .setManifestKeyPrefix('build/')
+
+    // Ajoute l'option pour activer HMR
+    .enableVersioning(Encore.isProduction())
+    .configureDevServerOptions(options => {
+        options.hot = true;
+        options.liveReload = true; // Si tu veux aussi activer le rechargement en cas de changement HTML
+    })
+
+    // Active le HMR pour CSS
+    .enablePostCssLoader()
+    .enableSassLoader()
+
     // enables and configure @babel/preset-env polyfills
     .configureBabelPresetEnv((config) => {
         config.useBuiltIns = 'usage';
