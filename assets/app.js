@@ -7,7 +7,6 @@ import './bootstrap.js';
  */
 import './styles/app.css';
 import './styles/main.css';
-import './styles/login.css';
 
 document.querySelectorAll('.amount').forEach(function(label) {
     label.addEventListener('click', function() {
