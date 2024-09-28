@@ -13,7 +13,12 @@ Encore
     .setPublicPath('/build')
     // only needed for CDN's or subdirectory deploy
     //.setManifestKeyPrefix('build/')
-
+    .copyFiles({
+        from: './assets/images',
+        to: 'images/[path][name].[hash:8].[ext]',
+        // si tu veux ne copier que certains types de fichiers (facultatif)
+        pattern: /\.(png|jpg|jpeg|gif|ico|svg|webp)$/,
+    })
     /*
      * ENTRY CONFIG
      *
@@ -21,6 +26,7 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/app.js')
+    .addEntry('register', './assets/register.js')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()

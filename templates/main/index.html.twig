@@ -4,7 +4,8 @@ endblock %} {% block body %}
 <header>
   <img src="{{ asset('build/images/arc-de-triomphe.jpg') }}" alt="" />
   <h1>
-    Citoyen, sensibilisez et formez-vous <br />
+    Citoyen, sensibilisez et formez-vous
+    <br />
     à la sécurité avec les acteurs privés et publics !
   </h1>
   <section>
@@ -16,35 +17,85 @@ endblock %} {% block body %}
         le cadre d’une compréhension, acculturation, et d’intelligence pour le
         concitoyen.
       </P>
+      <a href="#">Visiter</a>
     </div>
     <div>
-      <h2>SENSIBILISATION</h2>
+      <h2>CONSEIL</h2>
       <P>
-        Différentes thématiques liées à la sécurité et sûreté de manière
-        générale sont dispensées avec ADESS. Ces sensibilisations rentrent dans
-        le cadre d’une compréhension, acculturation, et d’intelligence pour le
-        concitoyen.
+        ADESS travaille aussi sur le continuum de sécurité qui se veut être la
+        base de la sécurité globale en incluant une collaboration pleine et
+        entière entre les forces de sécurité publique, et tous les acteurs
+        privés (entreprises et oragnismes).
       </P>
+      <a href="#">Visiter</a>
     </div>
     <div>
-      <h2>SENSIBILISATION</h2>
+      <h2>RECRUTEMENT</h2>
       <P>
-        Différentes thématiques liées à la sécurité et sûreté de manière
-        générale sont dispensées avec ADESS. Ces sensibilisations rentrent dans
-        le cadre d’une compréhension, acculturation, et d’intelligence pour le
-        concitoyen.
+        Le réseau ADESS est susceptible de recruter. Nous avons des partenaires
+        qui recherchent en continu tout type de profil. Nous communiquons en
+        interne et en externe sur différents supports (réseaux sociaux,
+        e-mailing…).
       </P>
+      <a href="#">Visiter</a>
     </div>
     <div>
-      <h2>SENSIBILISATION</h2>
+      <h2>ECHANGE</h2>
       <P>
-        Différentes thématiques liées à la sécurité et sûreté de manière
-        générale sont dispensées avec ADESS. Ces sensibilisations rentrent dans
-        le cadre d’une compréhension, acculturation, et d’intelligence pour le
-        concitoyen.
+        ADESS est un réseau d’échanges en France et à l‘International sur des
+        sujets classiques et majeurs. Les sujets majeurs demandent une
+        collaboration avec les partis, telles que la non proliferation des
+        armes…
       </P>
+      <a href="#">Visiter</a>
     </div>
   </section>
 </header>
+<section class="content">
+  <div class="events">
+    <h2>EVENEMENTS DU MOMENT</h2>
+  </div>
+  <div class="payment">
+    <form action="#" method="post" class="payment">
+      <h2>Faire un Don</h2>
 
+      <label class="amount">
+        <input type="radio" name="amount" value="10" required />
+        10€
+      </label>
+      <label class="amount">
+        <input type="radio" name="amount" value="15" />
+        15€
+      </label>
+      <label class="amount">
+        <input type="radio" name="amount" value="20" />
+        20€
+      </label>
+      <label class="amount">
+        <input type="radio" name="amount" value="30" />
+        30€
+      </label>
+
+      <div class="choice">
+        <input
+          type="text"
+          name="custom_amount"
+          placeholder="Choisissez votre montant"
+          pattern="\d*"
+          title="Veuillez entrer un montant valide"
+        />
+      </div>
+
+      <button type="submit">DONNER</button>
+    </form>
+  </div>
+</section>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 {% endblock %}

@@ -1,0 +1,50 @@
+form {
+    border: 1px solid #dbdbdb;
+    display: flex;
+    flex-direction: column;
+    gap: 1.9rem;
+    align-items: center;
+    justify-content: start;
+    padding-top: 8rem;
+    width: 50%;
+    height: 40rem;
+    margin: 10rem auto;
+    border-radius: 4px;
+    box-shadow: 1px 1px 4px 4px rgb(219, 219, 219);
+}
+form h1{
+    margin: 0 auto;
+    color: var(--secondary-color);
+}
+form input {
+    border-radius: 4px;
+    border : 1px solid rgb(219, 219, 219);
+    height: 2.5rem;
+    padding-left: 1rem;
+    width: 28rem;
+}
+form button {
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin: 0 auto;
+    border : 1px solid rgb(219, 219, 219);
+    font-weight: bold;
+    background-color: var(--third-color);
+    color: white;
+    width: 6.5rem;
+    height: 3rem;
+}
+form a {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--first-font);
+    border-radius: 4px;
+    margin: 0 auto;
+    border : 1px solid rgb(219, 219, 219);
+    background-color: var(--primary-color);
+    color: white;
+    width: 7rem;
+    height: 2rem;
+}
