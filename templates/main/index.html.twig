@@ -56,26 +56,26 @@ endblock %} {% block body %}
     <h2>EVENEMENTS DU MOMENT</h2>
   </div>
   <div class="payment">
-    <form action="#" method="post" class="payment">
+    <form action="#" method="post">
       <h2>Faire un Don</h2>
-
-      <label class="amount">
-        <input type="radio" name="amount" value="10" required />
-        10€
-      </label>
-      <label class="amount">
-        <input type="radio" name="amount" value="15" />
-        15€
-      </label>
-      <label class="amount">
-        <input type="radio" name="amount" value="20" />
-        20€
-      </label>
-      <label class="amount">
-        <input type="radio" name="amount" value="30" />
-        30€
-      </label>
-
+      <div class="amount-container">
+        <label class="amount">
+          <input type="radio" name="amount" value="10" required />
+          10€
+        </label>
+        <label class="amount">
+          <input type="radio" name="amount" value="15" />
+          15€
+        </label>
+        <label class="amount">
+          <input type="radio" name="amount" value="20" />
+          20€
+        </label>
+        <label class="amount">
+          <input type="radio" name="amount" value="30" />
+          30€
+        </label>
+      </div>
       <div class="choice">
         <input
           type="text"
