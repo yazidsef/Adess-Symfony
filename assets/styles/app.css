@@ -188,7 +188,7 @@ header div a {
     flex-direction: column;
     margin: 0 auto;
 }
-.liens div a {
+.liens div a , .salles a{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -201,4 +201,27 @@ header div a {
     border-radius: 4px;
     box-shadow: 1px 4px 6px 2px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
+}
+.salles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    margin: 0 auto;
+    margin-top:6rem;
+}
+.salles h3{
+    color: var(--primary-color);
+    font-size: 2.3rem;
+}
+.salles img{
+    width: 90%;
+    height: auto;
+}
+.salles p{
+    width: 80%;
+    text-align: justify;
+    margin-bottom: 2rem;
+    color: var(--text-color);
 }

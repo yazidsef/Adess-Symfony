@@ -21,6 +21,9 @@ class RegistrationFormType extends AbstractType
             ->add('email', TextType::class ,['attr'=>['placeholder'=>'Email'], 'label'=>false]) 
             ->add('firstName',TextType::class ,['attr'=>['placeholder'=>'Nom'], 'label'=>false])
             ->add('lastName',TextType::class ,['attr'=>['placeholder'=>'Prénom'], 'label'=>false])
+            ->add('region',TextType::class ,['attr'=>['placeholder'=>'region'], 'label'=>false])
+            ->add('adresse',TextType::class ,['attr'=>['placeholder'=>'adresse'], 'label'=>false])
+            ->add('code_postal',TextType::class ,['attr'=>['placeholder'=>'code postal'], 'label'=>false])
             ->add('status',TextType::class ,['attr'=>['placeholder'=>'status'], 'label'=>false])
             ->add('profession',TextType::class ,['attr'=>['placeholder'=>'profession'], 'label'=>false])
             ->add('plainPassword', PasswordType::class, [

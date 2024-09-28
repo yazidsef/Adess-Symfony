@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 :root{
     --primary-color: #FA9B43;
-    --secondary-color: #263142;
+    --secondary-color: #344968;
     --third-color : #007AFF;
 
     /* Font families */
     --first-font: 'Source Code Pro';
+    --text-color:#535353;
 
 }
 body{

@@ -60,6 +60,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private bool $isVerified = false;
 
+    #[ORM\Column(length: 150)]
+    private ?string $region = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $adresse = null;
+
+    #[ORM\Column(length: 255)]
+    private ?int $code_postal = null;
+
+    #[ORM\Column]
+    private ?\DateTimeImmutable $birth_date = null;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
@@ -239,6 +251,54 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setVerified(bool $isVerified): static
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getRegion(): ?string
+    {
+        return $this->region;
+    }
+
+    public function setRegion(string $region): static
+    {
+        $this->region = $region;
+
+        return $this;
+    }
+
+    public function getAdresse(): ?string
+    {
+        return $this->adresse;
+    }
+
+    public function setAdresse(string $adresse): static
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    public function getCodePostal(): ?int
+    {
+        return $this->code_postal;
+    }
+
+    public function setCodePostal(int $code_postal): static
+    {
+        $this->code_postal = $code_postal;
+    
+        return $this;
+    }
+
+    public function getBirthDate(): ?\DateTimeImmutable
+    {
+        return $this->birth_date;
+    }
+
+    public function setBirthDate(\DateTimeImmutable $birth_date): static
+    {
+        $this->birth_date = $birth_date;
 
         return $this;
     }
