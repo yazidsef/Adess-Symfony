@@ -18,7 +18,7 @@ final class AppointmentController extends AbstractController
     #[Route(name: 'app_appointment_index', methods: ['GET'])]
     public function index(AppointmentRepository $appointmentRepository): Response
     {
-        return $this->render('appointment/index.html.twig', [
+        return $this->render('admin/appointment/index.html.twig', [
             'appointments' => $appointmentRepository->findAll(),
         ]);
     }
