@@ -1,157 +1,145 @@
-{% extends 'base.html.twig' %} {% block title %}Hello MainController! {%
-endblock %} {% block body %}
+{% extends 'base.html.twig' %}
+{% block title %}Hello MainController!
+{%
+endblock %}
+{% block body %}
 
-<header>
-  <img src="{{ asset('build/images/arc-de-triomphe.jpg') }}" alt="" />
-  <h1>
-    Citoyen, sensibilisez et formez-vous
-    <br />
-    à la sécurité avec les acteurs privés et publics !
-  </h1>
-  <section>
-    <div>
-      <h2>SENSIBILISATION</h2>
-      <P>
-        Différentes thématiques liées à la sécurité et sûreté de manière
-        générale sont dispensées avec ADESS. Ces sensibilisations rentrent dans
-        le cadre d’une compréhension, acculturation, et d’intelligence pour le
-        concitoyen.
-      </P>
-      <a href="#">Visiter</a>
-    </div>
-    <div>
-      <h2>CONSEIL</h2>
-      <P>
-        ADESS travaille aussi sur le continuum de sécurité qui se veut être la
-        base de la sécurité globale en incluant une collaboration pleine et
-        entière entre les forces de sécurité publique, et tous les acteurs
-        privés (entreprises et oragnismes).
-      </P>
-      <a href="#">Visiter</a>
-    </div>
-    <div>
-      <h2>RECRUTEMENT</h2>
-      <P>
-        Le réseau ADESS est susceptible de recruter. Nous avons des partenaires
-        qui recherchent en continu tout type de profil. Nous communiquons en
-        interne et en externe sur différents supports (réseaux sociaux,
-        e-mailing…).
-      </P>
-      <a href="#">Visiter</a>
-    </div>
-    <div>
-      <h2>ECHANGE</h2>
-      <P>
-        ADESS est un réseau d’échanges en France et à l‘International sur des
-        sujets classiques et majeurs. Les sujets majeurs demandent une
-        collaboration avec les partis, telles que la non proliferation des
-        armes…
-      </P>
-      <a href="#">Visiter</a>
-    </div>
-  </section>
-</header>
-<section class="content">
-  <div class="events">
-    <h2>EVENEMENTS DU MOMENT</h2>
-  </div>
-  <div class="payment">
-    <form action="#" method="post">
-      <h2>Faire un Don</h2>
-      <div class="amount-container">
-        <label class="amount">
-          <input type="radio" name="amount" value="10" required />
-          10€
-        </label>
-        <label class="amount">
-          <input type="radio" name="amount" value="15" />
-          15€
-        </label>
-        <label class="amount">
-          <input type="radio" name="amount" value="20" />
-          20€
-        </label>
-        <label class="amount">
-          <input type="radio" name="amount" value="30" />
-          30€
-        </label>
-      </div>
-      <div class="choice">
-        <input
-          type="text"
-          name="custom_amount"
-          placeholder="Choisissez votre montant"
-          pattern="\d*"
-          title="Veuillez entrer un montant valide"
-        />
-      </div>
+	<header>
+		<img src="{{ asset('build/images/arc-de-triomphe.jpg') }}" alt=""/>
+		<h1>
+			Citoyen, sensibilisez et formez-vous
+			<br/>
+			à la sécurité avec les acteurs privés et publics !
+		</h1>
+		<section>
+			<div>
+				<h2>SENSIBILISATION</h2>
+				<P>
+					Différentes thématiques liées à la sécurité et sûreté de manière
+					        générale sont dispensées avec ADESS. Ces sensibilisations rentrent dans
+					        le cadre d’une compréhension, acculturation, et d’intelligence pour le
+					        concitoyen.
+				</P>
+				<a href="#">Visiter</a>
+			</div>
+			<div>
+				<h2>CONSEIL</h2>
+				<P>
+					ADESS travaille aussi sur le continuum de sécurité qui se veut être la
+					        base de la sécurité globale en incluant une collaboration pleine et
+					        entière entre les forces de sécurité publique, et tous les acteurs
+					        privés (entreprises et oragnismes).
+				</P>
+				<a href="#">Visiter</a>
+			</div>
+			<div>
+				<h2>RECRUTEMENT</h2>
+				<P>
+					Le réseau ADESS est susceptible de recruter. Nous avons des partenaires
+					        qui recherchent en continu tout type de profil. Nous communiquons en
+					        interne et en externe sur différents supports (réseaux sociaux,
+					        e-mailing…).
+				</P>
+				<a href="#">Visiter</a>
+			</div>
+			<div>
+				<h2>ECHANGE</h2>
+				<P>
+					ADESS est un réseau d’échanges en France et à l‘International sur des
+					        sujets classiques et majeurs. Les sujets majeurs demandent une
+					        collaboration avec les partis, telles que la non proliferation des
+					        armes…
+				</P>
+				<a href="#">Visiter</a>
+			</div>
+		</section>
+	</header>
+	<section class="content">
+		<div class="events">
+			<h2>EVENEMENTS DU MOMENT</h2>
+		</div>
+		<div class="payment">
+			<form action="#" method="post">
+				<h2>Faire un Don</h2>
+				<div class="amount-container">
+					<label class="amount">
+						<input type="radio" name="amount" value="10" required/>
+						10€
+					</label>
+					<label class="amount">
+						<input type="radio" name="amount" value="15"/>
+						15€
+					</label>
+					<label class="amount">
+						<input type="radio" name="amount" value="20"/>
+						20€
+					</label>
+					<label class="amount">
+						<input type="radio" name="amount" value="30"/>
+						30€
+					</label>
+				</div>
+				<div class="choice">
+					<input type="text" name="custom_amount" placeholder="Choisissez votre montant" pattern="\d*" title="Veuillez entrer un montant valide"/>
+				</div>
 
-      <button type="submit">DONNER</button>
-    </form>
-  </div>
-</section>
-<div class="vocation">
-  <h3><span>ADESS</span> pour vocation</h3>
-  <p>
-    En France, il est essentiel de rapprocher la population des forces de
-    sécurité pour encourager la confiance, le respect mutuel et la coopération
-    entre les citoyens et les gardiens de la nation. ADESS collabore avec les
-    forces de sécurité publique et privée pour communiquer avec la population de
-    manière transparente sur leurs actions, leurs objectifs et leurs méthodes.
-    Nous organisons des réunions, des forums de discussion, des rapports
-    d’activité ou des campagnes de sensibilisation.
-    <br />
-    La population a la possibilité avec ADESS de s’informer/rejoindre la
-    sécurité privée ou publique, la réserve citoyenne (RC) ou opérationnelle
-    (RO), de s’impliquer dans le service national universel (SNU) ou simplement
-    faire des signalements.
-    <br />
-    ADESS a également pour vocation de promouvoir la sécurité en France auprès
-    de la population en sensibilisant par le biais de formations en présentiel
-    et d’articles en ligne. <br />Toutes les personnes qui rejoignent ADESS
-    s’engagent dans un 
-    <a
-      href="https://adess-france.fr/wp-content/uploads/2024/06/20240531_La-place-des-acteurs-civils-dans-une-strategie-de-defense-globale.pdf"
-      >comité d’éthique de la défense.</a
-    >
-  </p>
-</div>
-<section class="liens">
-  <div class="benevole">
-    <img
-      src="{{ asset('build/images/devenirbenevole.png') }}"
-      alt="Devenir un bénévole"
-    />
-    <a href="">Devenir un Bénévole</a>
-  </div>
-  <div class="job">
-    <img
-      src="{{ asset('build/images/trouveunjob.png') }}"
-      alt="trouver un job"
-    />
-    <a href="" style="margin-top: 10px">Offres d'emploi</a>
-  </div>
-</section>
-<section class="salles">
-  <h3>NOUS SENSIBILISON EN SALLE</h3>
-  <img
-    src="{{ asset('build/images/annonce.png') }}"
-    alt="annonce pour les salles"
-  />
-  <p>
-    Vous pouvez vous rendre directement dans l’une de nos salles sans prendre de
-    réservation. N’oubliez pas que si vous venez sans réservation, il sera
-    impossible de vous assurer une place le jour J ! Retrouvez également la
-    liste des lieux sur
-  </p>
-  <a href="#">NOS IMPLANTATIONS</a>
-</section>
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
+				<button type="submit">DONNER</button>
+			</form>
+		</div>
+	</section>
+	<div class="vocation">
+		<h3>
+			<span>ADESS</span>
+			pour vocation</h3>
+		<p>
+			En France, il est essentiel de rapprocher la population des forces de
+			    sécurité pour encourager la confiance, le respect mutuel et la coopération
+			    entre les citoyens et les gardiens de la nation. ADESS collabore avec les
+			    forces de sécurité publique et privée pour communiquer avec la population de
+			    manière transparente sur leurs actions, leurs objectifs et leurs méthodes.
+			    Nous organisons des réunions, des forums de discussion, des rapports
+			    d’activité ou des campagnes de sensibilisation.
+			<br/>
+			La population a la possibilité avec ADESS de s’informer/rejoindre la
+			    sécurité privée ou publique, la réserve citoyenne (RC) ou opérationnelle
+			    (RO), de s’impliquer dans le service national universel (SNU) ou simplement
+			    faire des signalements.
+			<br/>
+			ADESS a également pour vocation de promouvoir la sécurité en France auprès
+			    de la population en sensibilisant par le biais de formations en présentiel
+			    et d’articles en ligne.
+			<br/>Toutes les personnes qui rejoignent ADESS
+			    s’engagent dans un
+			<a href="https://adess-france.fr/wp-content/uploads/2024/06/20240531_La-place-des-acteurs-civils-dans-une-strategie-de-defense-globale.pdf">comité d’éthique de la défense.</a>
+		</p>
+	</div>
+	<section class="liens">
+		<div class="benevole">
+			<img src="{{ asset('build/images/devenirbenevole.png') }}" alt="Devenir un bénévole"/>
+			<a href="">Devenir un Bénévole</a>
+		</div>
+		<div class="job">
+			<img src="{{ asset('build/images/trouveunjob.png') }}" alt="trouver un job"/>
+			<a href="" style="margin-top: 10px">Offres d'emploi</a>
+		</div>
+	</section>
+	<section class="salles">
+		<h3>NOUS SENSIBILISON EN SALLE</h3>
+		<img src="{{ asset('build/images/annonce.png') }}" alt="annonce pour les salles"/>
+		<p>
+			Vous pouvez vous rendre directement dans l’une de nos salles sans prendre de
+			    réservation. N’oubliez pas que si vous venez sans réservation, il sera
+			    impossible de vous assurer une place le jour J ! Retrouvez également la
+			    liste des lieux sur
+		</p>
+		<a href="{{path('app_events_index')}}">NOS IMPLANTATIONS</a>
+	</section>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
 {% endblock %}

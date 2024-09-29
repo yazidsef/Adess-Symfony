@@ -36,7 +36,7 @@ final class EventsController extends AbstractController
             return $this->redirectToRoute('app_events_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render('events/new.html.twig', [
+        return $this->render('admin/events/new.html.twig', [
             'event' => $event,
             'form' => $form,
         ]);
@@ -45,7 +45,7 @@ final class EventsController extends AbstractController
     #[Route('/{id}', name: 'app_events_show', methods: ['GET'])]
     public function show(Events $event): Response
     {
-        return $this->render('events/show.html.twig', [
+        return $this->render('admin/events/show.html.twig', [
             'event' => $event,
         ]);
     }
@@ -62,7 +62,7 @@ final class EventsController extends AbstractController
             return $this->redirectToRoute('app_events_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render('events/edit.html.twig', [
+        return $this->render('admin/events/edit.html.twig', [
             'event' => $event,
             'form' => $form,
         ]);

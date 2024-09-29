@@ -4,7 +4,10 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Appointment</h1>
+	<h1>Rendez vous de
+		{{ appointment.name }}
+		{{ appointment.lastname }}
+	</h1>
 
 	<table class="table">
 		<tbody>
@@ -36,5 +39,5 @@
 
 	<a href="{{ path('app_appointment_edit', {'id': appointment.id}) }}">edit</a>
 
-	{{ include('appointment/_delete_form.html.twig') }}
+	{{ include('admin/appointment/_delete_form.html.twig') }}
 {% endblock %}
