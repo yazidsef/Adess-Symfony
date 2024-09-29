@@ -14,6 +14,7 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route('/events')]
 final class EventsController extends AbstractController
 {
+
     #[Route(name: 'app_events_index', methods: ['GET'])]
     public function index(EventsRepository $eventsRepository): Response
     {
@@ -23,6 +24,7 @@ final class EventsController extends AbstractController
     }
 
     #[Route('/new', name: 'app_events_new', methods: ['GET', 'POST'])]
+
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $event = new Events();
@@ -36,7 +38,7 @@ final class EventsController extends AbstractController
             return $this->redirectToRoute('app_events_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render('admin/events/new.html.twig', [
+        return $this->render('events/new.html.twig', [
             'event' => $event,
             'form' => $form,
         ]);

@@ -22,7 +22,7 @@ final class AppointmentController extends AbstractController
         ]);
     }
 
-    #[Route('appointment/new/{event}', name: 'admin_app_appointment_new', methods: ['GET', 'POST'])]
+    #[Route('admin/appointment/new/{event}', name: 'admin_app_appointment_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager , Events $event): Response
     {
         if (!$event) {
