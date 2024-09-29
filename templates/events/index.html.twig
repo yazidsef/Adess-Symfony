@@ -38,8 +38,8 @@
 					<td>{{ event.salle.name }}</td>
 
 					<td>
-						<a href="{{ path('app_events_show', {'id': event.id}) }}">show</a>
-						<a href="{{ path('app_events_edit', {'id': event.id}) }}">edit</a>
+						{# <a href="{{ path('app_events_show', {'id': event.id}) }}">show</a>
+												<a href="{{ path('app_events_edit', {'id': event.id}) }}">edit</a> #}
 						<a href="{{path('app_appointment_new', {'event':event.id})}}">prendre un rendez vous</a>
 					</td>
 				</tr>
