@@ -44,6 +44,9 @@ class Events
     #[ORM\OneToMany(targetEntity: Appointment::class, mappedBy: 'salle')]
     private Collection $appointments;
 
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $content = null;
+
     public function __construct()
     {
         $this->appointments = new ArrayCollection();
@@ -164,6 +167,18 @@ class Events
                 $appointment->setSalle(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getContent(): ?string
+    {
+        return $this->content;
+    }
+
+    public function setContent(string $content): static
+    {
+        $this->content = $content;
 
         return $this;
     }

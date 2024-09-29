@@ -23,6 +23,7 @@ class EventsType extends AbstractType
             ])
             ->add('paying')
             ->add('prix')
+            ->add('content')
             ->add('numberofregistrants')
             ->add('salle', EntityType::class, [
                 'class' => Room::class,

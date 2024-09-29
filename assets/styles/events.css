@@ -1,0 +1,22 @@
+table,
+thead,
+th {
+    border: 1px solid black;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    border: 1px solid red;
+    padding: 5px;
+}
+
+table a {
+    padding: 5px;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+}

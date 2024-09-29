@@ -28,6 +28,7 @@ Encore
     .addEntry('app', './assets/app.js')
     .addEntry('register', './assets/register.js')
     .addEntry('login', './assets/login.js')
+    .addEntry('events', './assets/events.js')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
@@ -89,6 +90,6 @@ Encore
 
     // uncomment if you're having problems with a jQuery plugin
     //.autoProvidejQuery()
-;
+    ;
 
 module.exports = Encore.getWebpackConfig();

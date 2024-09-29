@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Appointment
+{% endblock %}
+
+{% block body %}
+	<h1>Appointment</h1>
+
+	<table class="table">
+		<tbody>
+
+			<tr>
+				<th>Name</th>
+				<td>{{ appointment.name }}</td>
+			</tr>
+			<tr>
+				<th>Lastname</th>
+				<td>{{ appointment.lastname }}</td>
+			</tr>
+			<tr>
+				<th>Email</th>
+				<td>{{ appointment.email }}</td>
+			</tr>
+			<tr>
+				<th>City</th>
+				<td>{{ appointment.city }}</td>
+			</tr>
+			<tr>
+				<th>Region</th>
+				<td>{{ appointment.region }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<a href="{{ path('app_appointment_index') }}">back to list</a>
+
+	<a href="{{ path('app_appointment_edit', {'id': appointment.id}) }}">edit</a>
+
+	{{ include('appointment/_delete_form.html.twig') }}
+{% endblock %}

@@ -30,7 +30,7 @@ class Appointment
 
     #[ORM\ManyToOne(inversedBy: 'appointments')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Events $salle = null;
+    private ?Events $event = null;
 
     public function getId(): ?int
     {
@@ -97,14 +97,14 @@ class Appointment
         return $this;
     }
 
-    public function getSalle(): ?Events
+    public function getEvent(): ?Events
     {
-        return $this->salle;
+        return $this->event;
     }
 
-    public function setSalle(?Events $salle): static
+    public function setEvent(?Events $event): static
     {
-        $this->salle = $salle;
+        $this->event = $event;
 
         return $this;
     }

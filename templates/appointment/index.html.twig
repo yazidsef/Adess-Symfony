@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Appointment index
+{% endblock %}
+
+{% block body %}
+	<h1 style="margin:0 auto;">Les rendez-vous</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Lastname</th>
+				<th>Email</th>
+				<th>City</th>
+				<th>Event</th>
+				<th>Region</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for appointment in appointments %}
+				<tr>
+					<td>{{ appointment.id }}</td>
+					<td>{{ appointment.name }}</td>
+					<td>{{ appointment.lastname }}</td>
+					<td>{{ appointment.email }}</td>
+					<td>{{ appointment.city }}</td>
+					<td>{{ appointment.event.name }}</td>
+					<td>{{ appointment.region }}</td>
+					<td>
+						<a href="{{ path('app_appointment_show', {'id': appointment.id}) }}">show</a>
+						<a href="{{ path('app_appointment_edit', {'id': appointment.id}) }}">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="7">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+
+{% endblock %}
