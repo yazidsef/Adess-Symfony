@@ -10,6 +10,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use GuzzleHttp\Client;
+
 
 #[Route('/room')]
 final class RoomController extends AbstractController
@@ -30,6 +32,8 @@ final class RoomController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $ville = $room->getVille();
+            $coordinates = $this->getCoordinatesFromNominatim($ville);
             $entityManager->persist($room);
             $entityManager->flush();
 
@@ -40,6 +44,37 @@ final class RoomController extends AbstractController
             'room' => $room,
             'form' => $form,
         ]);
+    }
+
+    private function getCoordinatesFromNominatim(string $ville): ?array
+    {
+        // initilaiser guzzle pour envoyer des requettes http
+        $client  =new Client();
+        //preparation de l'url de Nominatil avec le nom de la ville 
+        $url = "https://nominatim.openstreetmap.org/search?q=".urlencode($ville)."&format=json&limit=1";
+
+        try{
+            //envoyer des requete est réussie a nominatim
+            $response = $client->request('GET', $url);
+
+            //verification si la requette est réussie (code 200)
+            if($response->getStatusCode()===200){
+                //decoder la reponse JSON 
+                $data = json_decode($response->getBody()->getContents(),true);
+
+                //si les données existent retourner les cordonnées 
+                if(isset($data[0])){
+                    return [
+                        'latitude'=>$data[0]['lat'],
+                        'longitude'=>$data[0]['lon'],
+                    ];
+                }
+            }
+        }catch(\Exception $e){
+            //Gérer les erreurs d'API
+            $this->addFlash('error','Erreur lors de la récupération des coordonnées');
+        }
+
     }
 
     #[Route('/{id}', name: 'app_room_show', methods: ['GET'])]
