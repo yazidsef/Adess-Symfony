@@ -6,8 +6,14 @@
 	{{ encore_entry_link_tags('events') }}
 {% endblock %}
 {% block body %}
-	<h1>Events index</h1>
+	<h1>Les evenements</h1>
 
+	{# maintenant il faut faire le filtrage #}
+	<form action="#">
+		<input type="list" placeholder="Payant">
+		<input type="text" placeholder="type d'évenement">
+		<input type="text" placeholder="région">
+	</form>
 	<table class="table">
 		<thead>
 			<tr>
@@ -20,7 +26,6 @@
 				<th>Prix</th>
 				<th>Numberofregistrants</th>
 				<th>salle</th>
-
 				<th>actions</th>
 			</tr>
 		</thead>
@@ -39,7 +44,7 @@
 
 					<td>
 						{# <a href="{{ path('app_events_show', {'id': event.id}) }}">show</a>
-																								<a href="{{ path('app_events_edit', {'id': event.id}) }}">edit</a> #}
+																																																						<a href="{{ path('app_events_edit', {'id': event.id}) }}">edit</a> #}
 						<a href="{{path('app_appointment_new', {'event':event.id})}}">prendre un rendez vous</a>
 					</td>
 				</tr>
