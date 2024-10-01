@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Events;
+use App\Form\EventSearchType;
 use App\Form\EventsType;
 use App\Repository\EventsRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -16,10 +17,24 @@ final class EventsController extends AbstractController
 {
 
     #[Route(name: 'app_events_index', methods: ['GET'])]
-    public function index(EventsRepository $eventsRepository): Response
+    public function index(EventsRepository $eventsRepository, Request $request): Response
     {
+        $form = $this->createForm(EventSearchType::class);
+        $form->handleRequest($request);
+
+        //initialisation of the neares rooms
+        $nearesRooms = [];
+        if($form->isSubmitted()&& $form->isValid()){
+            //get the data from the form
+            $data = $form->getData();
+            $ville = $data['ville'];
+            $coordinates = $this->getCoordinatesFromNominatim($ville);
+
+            //calling Nominatim to get the city coordinates
+        }
         return $this->render('events/index.html.twig', [
             'events' => $eventsRepository->findAll(),
+            'form' => $form->createView()
         ]);
     }
 
