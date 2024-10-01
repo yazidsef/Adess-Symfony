@@ -34,18 +34,29 @@ final class RoomController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $ville = $room->getVille();
             $coordinates = $this->getCoordinatesFromNominatim($ville);
+            if($coordinates){
+                //recupérer latitude et longtitude de ville 
+                $latitude = $coordinates['latitude'];
+                $longitude = $coordinates['longitude'];
+
+                //recupérer les salles pour calculer la distance paraport a la ville saisie
+                // $sallesProche = $this->findRoomNear($entityManager,$latitude,$longitude);
+            }
+            $room->setLatitude($latitude);
+            $room->setLongtitude($longitude);
             $entityManager->persist($room);
             $entityManager->flush();
 
             return $this->redirectToRoute('app_room_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render('room/new.html.twig', [
+        return $this->render('admin/room/new.html.twig', [
             'room' => $room,
             'form' => $form,
         ]);
     }
 
+    //the function to get the coordiantes of the city
     private function getCoordinatesFromNominatim(string $ville): ?array
     {
         // initilaiser guzzle pour envoyer des requettes http
@@ -74,6 +85,31 @@ final class RoomController extends AbstractController
             //Gérer les erreurs d'API
             $this->addFlash('error','Erreur lors de la récupération des coordonnées');
         }
+
+    }
+    
+    //function to get the rooms near the city
+    private function findRoomNear(EntityManagerInterface $entityManager, $latitude, $longitude): array
+    {
+        //recupérer les salles de la base de données
+       // Utilisation de la formule de Haversine pour calculer la distance entre les salles et la ville saisie
+       $query = $entityManager->createQuery(
+        'SELECT s, (6371 * acos(cos(radians(:latitude)) 
+        * cos(radians(s.latitude)) 
+        * cos(radians(s.longitude) - radians(:longitude)) 
+        + sin(radians(:latitude)) 
+        * sin(radians(s.latitude)))) AS distance
+        FROM App\Entity\Salle s
+        HAVING distance <= 500
+        ORDER BY distance ASC'
+    );
+
+    $query->setParameters([
+        'latitude' => $latitude,
+        'longitude' => $longitude
+    ]);
+
+    return $query->getResult();
 
     }
 

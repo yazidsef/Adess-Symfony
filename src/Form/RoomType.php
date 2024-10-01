@@ -16,9 +16,7 @@ class RoomType extends AbstractType
             ->add('adress')
             ->add('ville')
             ->add('region')
-            ->add('latitude')
             ->add('capacity')
-            ->add('longtitude')
         ;
     }
 
