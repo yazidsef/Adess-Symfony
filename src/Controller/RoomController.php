@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Room;
 use App\Form\RoomType;
+use App\Service\GeoLocationService;
 use App\Repository\RoomRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,6 +17,11 @@ use GuzzleHttp\Client;
 #[Route('/room')]
 final class RoomController extends AbstractController
 {
+    private GeoLocationService $geoLocationService;
+    public function __construct(GeoLocationService $geoLocationService)
+    {
+        $this->geoLocationService = $geoLocationService;
+    }
     #[Route(name: 'app_room_index', methods: ['GET'])]
     public function index(RoomRepository $roomRepository): Response
     {
@@ -33,7 +39,7 @@ final class RoomController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $ville = $room->getVille();
-            $coordinates = $this->getCoordinatesFromNominatim($ville);
+            $coordinates = $this->geoLocationService->getCoordinatesFromNominatim($ville);
             if($coordinates){
                 //recupérer latitude et longtitude de ville 
                 $latitude = $coordinates['latitude'];
@@ -57,61 +63,37 @@ final class RoomController extends AbstractController
     }
 
     //the function to get the coordiantes of the city
-    private function getCoordinatesFromNominatim(string $ville): ?array
-    {
-        // initilaiser guzzle pour envoyer des requettes http
-        $client  =new Client();
-        //preparation de l'url de Nominatil avec le nom de la ville 
-        $url = "https://nominatim.openstreetmap.org/search?q=".urlencode($ville)."&format=json&limit=1";
+    // private function getCoordinatesFromNominatim(string $ville): ?array
+    // {
+    //     // initilaiser guzzle pour envoyer des requettes http
+    //     $client  =new Client();
+    //     //preparation de l'url de Nominatil avec le nom de la ville 
+    //     $url = "https://nominatim.openstreetmap.org/search?q=".urlencode($ville)."&format=json&limit=1";
 
-        try{
-            //envoyer des requete est réussie a nominatim
-            $response = $client->request('GET', $url);
+    //     try{
+    //         //envoyer des requete est réussie a nominatim
+    //         $response = $client->request('GET', $url);
 
-            //verification si la requette est réussie (code 200)
-            if($response->getStatusCode()===200){
-                //decoder la reponse JSON 
-                $data = json_decode($response->getBody()->getContents(),true);
+    //         //verification si la requette est réussie (code 200)
+    //         if($response->getStatusCode()===200){
+    //             //decoder la reponse JSON 
+    //             $data = json_decode($response->getBody()->getContents(),true);
 
-                //si les données existent retourner les cordonnées 
-                if(isset($data[0])){
-                    return [
-                        'latitude'=>$data[0]['lat'],
-                        'longitude'=>$data[0]['lon'],
-                    ];
-                }
-            }
-        }catch(\Exception $e){
-            //Gérer les erreurs d'API
-            $this->addFlash('error','Erreur lors de la récupération des coordonnées');
-        }
+    //             //si les données existent retourner les cordonnées 
+    //             if(isset($data[0])){
+    //                 return [
+    //                     'latitude'=>$data[0]['lat'],
+    //                     'longitude'=>$data[0]['lon'],
+    //                 ];
+    //             }
+    //         }
+    //     }catch(\Exception $e){
+    //         //Gérer les erreurs d'API
+    //         $this->addFlash('error','Erreur lors de la récupération des coordonnées');
+    //     }
 
-    }
+    // }
     
-    //function to get the rooms near the city
-    private function findRoomNear(EntityManagerInterface $entityManager, $latitude, $longitude): array
-    {
-        //recupérer les salles de la base de données
-       // Utilisation de la formule de Haversine pour calculer la distance entre les salles et la ville saisie
-       $query = $entityManager->createQuery(
-        'SELECT s, (6371 * acos(cos(radians(:latitude)) 
-        * cos(radians(s.latitude)) 
-        * cos(radians(s.longitude) - radians(:longitude)) 
-        + sin(radians(:latitude)) 
-        * sin(radians(s.latitude)))) AS distance
-        FROM App\Entity\Salle s
-        HAVING distance <= 500
-        ORDER BY distance ASC'
-    );
-
-    $query->setParameters([
-        'latitude' => $latitude,
-        'longitude' => $longitude
-    ]);
-
-    return $query->getResult();
-
-    }
 
     #[Route('/{id}', name: 'app_room_show', methods: ['GET'])]
     public function show(Room $room): Response
