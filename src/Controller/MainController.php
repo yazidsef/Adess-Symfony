@@ -11,8 +11,12 @@ class MainController extends AbstractController
     #[Route('/', name: 'app_main')]
     public function index(): Response
     {
-        return $this->render('main/index.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
+        return $this->render('main/index.html.twig');
+    }
+
+    #[Route('/category', name: 'app_category')]
+    public function static_page_category(): Response
+    {
+        return $this->render('main/category.html.twig');
     }
 }

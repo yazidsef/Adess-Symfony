@@ -1,0 +1,187 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catégories{% endblock %}
+{% block stylesheets %}
+	{{ encore_entry_link_tags('category') }}
+{% endblock %}
+{% block body %}
+
+    
+    {# Contenu principal de la page #}
+    <div class="container">
+    <div class="card">
+        <h2>LA SÉCURITÉ PRIVÉ</h2>
+        <img src="{{ asset('build/images/sécurité_privé.66e3d703.png') }}" alt="Sécurité Privée">
+        <p>Les emplois dans le domaine de la sécurité privée sont spécifiques au secteur public. Il est possible d’obtenir des informations utiles telles que l’histoire, le fonctionnement, les filières, les formations, les métiers, les reconversions...</p>
+    </div>
+
+    <div class="card">
+        <h2>LA SÉCURITÉ PUBLIQUE</h2>
+        <img src="{{ asset('build/images/sécurité_public.3bc93352.png') }}" alt="Sécurité Publique">
+        <p>Les emplois dans le domaine de la sécurité publique sont particulièrement captivants, avec un statut de fonctionnaire. Il est possible d’obtenir des informations utiles telles que les origines institutionnelles, les métiers, les concours, les reconversions...</p>
+    </div>
+
+    <div class="card">
+        <h2>SIGNALEMENT</h2>
+        <img src="{{ asset('build/images/signalement.e36317d8.png') }}" alt="Signalement">
+        <p>Il est possible pour chaque citoyen de signaler des faits tels que la malveillance ou un sinistre. Tout le monde peut utiliser cette application "Ma sécurité", qui permet de se connecter directement avec les forces de sécurité publique.</p>
+    </div>
+</div>
+<div class="large-card-container">
+    <!-- Première large card -->
+    <div class="large-card">
+        <div class="large-card-image">
+            <img src="{{ asset('build/images/sécurité_guard.337912dd.png') }}" alt="Entreprise de sécurité privée">
+        </div>
+        <div class="large-card-content">
+            <h2>ENTREPRISE DE LA SÉCURITÉ PRIVÉE</h2>
+            <p>L’histoire des entreprises de la sécurité et de la sûreté, est liée à l’histoire des sociétés. Aussi loin que l’on puisse remonter, presque tous les régimes ont été amenés à créer leurs propres structures de citoyens chargés de contribuer à la protection des villes.
+                L’utilisation de groupes de sécurité privée est apparue pour la première fois sous le règne de l’empereur romain Auguste, vers -20 av JC. Leur devoir consistait alors en deux composantes essentielles que l’on retrouve aujourd’hui et à savoir la protection contre le crime en général et la protection contre l’incendie.
+                Cette longue histoire au service des Etats, qui les a enrichis et qui les a vus évoluer, a fait des agents de gardiennage des sentinelles indispensables de la sécurité.
+                Aujourd’hui encore et plus que jamais, face à une recrudescence de la criminalité et de la délinquance, les sociétés de protection, héritières au riche passé sont des partenaires privilégiés et incontournables dans la vie des villes.
+                Au fil des siècles, évoluant en même temps que les États qui les emploient, les agents de sécurité sont devenus des professionnels à part entière, placés sous le contrôle du ministère de l’Intérieur, bénéficiant désormais d’une formation et adhérant fermement à des règles déontologiques strictes.
+                En France, leur nombre vient de dépasser le nombre de professionnels de la sécurité avec lesquels ils constituent une force d’intervention et un soutien supplémentaires non négligeables.</p>
+            <button class="cta-button">METIERS</button>
+        </div>
+    </div>
+
+    <!-- Deuxième large card (image à droite) -->
+    <div class="large-card reverse">
+        <div class="large-card-content">
+            <h2>SIGNALEMENT</h2>
+            <p>
+                Ma Sécurité est une application gouvernementale gratuite à destination de la population. Chaque citoyen pourra être ainsi accompagné et guidé dans ses démarches en ligne liées à sa sécurité et celle de ses concitoyens.
+                Ma Sécurité est une application qui met à disposition du grand public des conseils, des numéros utiles, des actualités locales ou thématiques et une cartographie des unités d’intervention.
+                Les usagers peuvent également utiliser une fonctionnalité de chat avec la Gendarmerie et la Police.
+            </p>
+        </div>
+        <div class="large-card-image">
+            <img src="{{ asset('build/images/Ma_sécurité_application.a6d5c653.png') }}" alt="Ma Sécurité">
+        </div>
+    </div>
+</div>
+<div class="public-security-container">
+    <h2 class="public-security-title">SÉCURITÉ PUBLIQUE</h2>
+    <p class="public-security-description">
+        L'État garantit à ses citoyens la sécurité et la paix. Pour cela, des lois sont votées afin d’établir des règles collectives. 
+        Les services de l’État (Police Nationale, Gendarmerie Nationale, etc.) assurent l’application de ces lois, 
+        la protection des citoyens, des frontières, l'assistance et le secours.
+    </p>
+
+    <div class="public-security-buttons">
+        <a href="#public-pompiers" class="public-security-btn">Sapeurs Pompiers de Paris</a>
+        <a href="#public-police-nationale" class="public-security-btn">Police Nationale</a>
+        <a href="#public-gendarmerie" class="public-security-btn">Gendarmerie Nationale</a>
+        <a href="#public-securite-civile" class="public-security-btn">Sécurité Civile</a>
+        <a href="#public-garde-nationale" class="public-security-btn">Garde Nationale</a>
+        <a href="#public-douane" class="public-security-btn">Douane</a>
+        <a href="#public-police-municipale" class="public-security-btn">Police Municipale</a>
+    </div>
+
+    <!-- Pompiers Section -->
+    <div id="public-pompiers" class="public-info-section">
+        <div class="public-text-left">
+            <p>
+                Les Sapeurs Pompiers de Paris jouent un rôle clé dans la protection des citoyens lors d'incidents ou d'accidents.
+                Ils sont en première ligne pour assurer l’assistance lors d’incendies, d’accidents ou autres catastrophes.
+            </p>
+        </div>
+        <div class="public-image-right">
+            <img src="{{ asset('build/images/Union.4b6569dd.png') }}" alt="Sapeurs Pompiers de Paris">
+        </div>
+    </div>
+
+    <!-- Police Nationale Section -->
+    <div id="public-police-nationale" class="public-info-section">
+        <div class="public-image-left">
+            <img src="{{ asset('build/images/police.ce6041fd.png') }}" alt="Police Nationale">
+        </div>
+        <div class="public-text-right">
+            <p>
+
+HISTORIQUE DE LA POLICE  <br>
+À la chute de l'Empire romain, le pouvoir de police se disperse parmi les seigneurs féodaux, maîtres de leurs fiefs, qui exercent la justice. Au Moyen Âge, le pouvoir de police et de justice se confondent, jusqu'à ce que les rois de France réaffirment progressivement leur autorité en retirant ces prérogatives aux seigneurs.
+
+CAMPAGNE ET VILLES<br>
+Aux XIIe et XIIIe siècles, le renforcement du pouvoir royal réduit les conflits féodaux, mais des mercenaires pillent le pays. La maréchaussée, un corps militaire, est créée pour surveiller les « gens de guerre », mais son autorité ne s'étend pas aux villes. Le royaume est alors structuré avec des prévôts, baillis et sénéchaux, cumulant des fonctions administratives, judiciaires et policières, un système complété plus tard par les intendants, précurseurs des préfets.
+
+En parallèle, les villes voient émerger une criminalité urbaine. Pour Paris, Saint Louis crée en 1254 un chevalier du guet pour assurer la sécurité nocturne. Philippe le Bel crée en 1306 les commissaires au Châtelet pour combattre la criminalité dans les quartiers.
+
+LES TENTATIVES DE RÉFORME <br>
+Diverses mesures tentent de répondre à la délinquance croissante, comme la création en 1526 du lieutenant criminel pour lutter contre les mendiants. Cependant, la criminalité continue d'augmenter, en partie en raison du manque de coordination entre les différentes autorités. En 1667, un édit royal reconnaît que les fonctions de justice et de police sont trop vastes pour être exercées par un seul fonctionnaire, amorçant une réforme pour mieux structurer l'application de l'ordre public.
+            </p>
+        </div>
+    </div>
+
+    <!-- Gendarmerie Section -->
+    <div id="public-gendarmerie" class="public-info-section">
+        <div class="public-text-left">
+            <p>
+                La Gendarmerie Nationale est une force militaire qui a pour mission de protéger et sécuriser les zones rurales et péri-urbaines.
+                Ils interviennent également en renfort de la Police dans des situations exceptionnelles.
+            </p>
+        </div>
+        <div class="public-image-right">
+            <img src="{{ asset('build/images/gendarmerie-national.baef467b.png') }}" alt="Gendarmerie Nationale">
+        </div>
+    </div>
+
+    <!-- Sécurité Civile Section -->
+    <div id="public-securite-civile" class="public-info-section">
+        <div class="public-image-left">
+            
+            <img src="{{ asset('build/images/douane.da4e3d2e.png') }}" alt="Sécurité Civile">
+        </div>
+        <div class="public-text-right">
+            <p>
+                La Sécurité Civile intervient lors de catastrophes naturelles, d'accidents industriels, ou autres événements majeurs 
+                nécessitant une intervention urgente pour la sauvegarde des populations et des biens.
+            </p>
+        </div>
+    </div>
+
+    <!-- Garde Nationale Section -->
+    <div id="public-garde-nationale" class="public-info-section">
+        <div class="public-text-left">
+            <p>
+                La Garde Nationale est une force de réserve destinée à renforcer les forces de sécurité en cas de crise majeure 
+                et à répondre aux besoins croissants de sécurité intérieure.
+            </p>
+        </div>
+        <div class="public-image-right">
+            <img src="{{ asset('build/images/gendarmerie.3ffcca19.png') }}" alt="Garde Nationale">
+        </div>
+    </div>
+
+    <!-- Douane Section -->
+    <div id="public-douane" class="public-info-section">
+        <div class="public-image-left">
+            <img src="{{ asset('build/images/image.177397dc.png') }}" alt="Douane">
+        </div>
+        <div class="public-text-right">
+            <p>
+               L’histoire de la douane remonte à la formation des États, qui cherchaient à contrôler leurs frontières pour se protéger et financer leurs campagnes militaires. Depuis l’Antiquité, les marchandises étaient taxées à l'importation pour remplir les caisses publiques, et les exportations étaient contrôlées pour garantir l’approvisionnement national.
+
+Après la chute de l'Empire romain, les taxes se multiplièrent, souvent gérées localement. L'affermage, un système où des fermiers collectaient les taxes pour le compte de l’autorité, devint courant.
+
+Au Moyen Âge, des exemptions fiscales encourageaient le commerce lors des grandes foires. Aux 15e et 16e siècles, les taxes douanières proliférèrent, mais commencèrent à être utilisées pour protéger l’économie nationale. Sous Jean-Baptiste Colbert, la douane moderne prit forme, avec la mise en place d’un tarif douanier en 1664 pour protéger la production nationale et soutenir le commerce.
+            </p>
+        </div>
+    </div>
+
+    <!-- Police Municipale Section -->
+    <div id="public-police-municipale" class="public-info-section">
+        <div class="public-text-left">
+            <p>
+                La Police Municipale agit au niveau local pour garantir la sécurité dans les communes et assister les citoyens dans des missions 
+                de proximité. Leur présence est essentielle pour prévenir les incivilités et renforcer la tranquillité publique.
+            </p>
+        </div>
+        <div class="public-image-right">
+            <img src="{{ asset('build/images/police-municipale.fc208147.png') }}" alt="Police Municipale">
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
